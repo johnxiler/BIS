@@ -1,0 +1,415 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: outfit;
+    background: #ebe5e5 !important;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 100px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar h3{
+    font-size: 20px;
+    color:#820000;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-transform: capitalize;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    cursor: none;
+}
+navList{
+    flex: 1;
+    text-align: right;
+    background: none;
+}
+navList ulist list{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    background: none;
+}
+navList ulist list a{
+    text-decoration: none;
+    color: #6F38C5;
+    font-size: 14px;
+    background: none;
+}
+navList ullist list a:hover{
+    color:#820000;
+}
+.row{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 130px !important;
+}
+.row .col-1 .upload form{
+    display: flex;
+    justify-content: space-between !important;
+}
+.row-0{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 130px !important;
+    margin-top: 25px !important;
+}
+.row-0a{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    margin-left: 130px !important;
+}
+.row-1{
+    display: flex;
+    align-items: center;
+    margin-left: 130px;
+}
+.row-1 .col-1-1 table{
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 0.9em;
+    min-width: 450px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background:	#ffffff;
+    color: black;
+    font-family: outfit;
+    border: none;
+    text-transform: capitalize;
+    padding: 100px;
+    font-size: 12px;
+    position: relative;
+}
+.row-1 .col-1-1 table thead tr{
+    background: linear-gradient(135deg, #6F38C5, #55308f);
+    color: #FFFF;
+    padding: 5px;
+    border-radius: 0 5px 0 5px;
+    font-size: 12px;
+}
+.row-1 .col-1-1 table th,
+.row-1 .col-1-1 table td {
+  padding: 10px 12px;
+  text-transform: capitalize;
+}
+.container .row-1 .col-1-2 form{
+    margin-right: 30px;
+    flex-basis: 10%;
+    display: flex;
+}
+.container .row-1 .col-1-2 form #selected-images{
+    margin-right: 50px;
+    display: block;
+}
+/**for form button**/
+.container .row-1 .col-1-1 table tr td .btn2{
+    width: 90px;
+    height: 40px;
+    border: 0;
+    padding: 8px;
+    outline:none;
+    color: #ffff;
+    background: linear-gradient(to right, #523838, #483070);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 12px;
+}
+.container .row-1 .col-1-1 table tr td .btn2 a{
+    text-decoration: none;
+    color: #ffff;
+}
+.container .row-1 .col-1-1 table tr td .btn2:hover{
+    background: linear-gradient(to right, #864d4d, #3d1b75);
+    transition: 0.5s;
+}
+/**End of form button**/
+/** Start of popUp **/
+
+.container .row-1 .col-1-1 table tr td .popbutton{
+    height: 50px;
+    width: 100%;
+    padding: 5px 0;
+    background: linear-gradient(to right, #463f3f, #6F38C5);
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.container .row-1 .col-1-1 table tr td input{
+    margin-top: 15px;
+    background: none;
+    color: #333;
+    font-size: 12px;
+    border: none;
+}
+/**End of PopUp**/
+.col-1-1{
+    margin-right: 250px;
+}
+.row .col-2 img{
+    border-radius: 6px;
+    margin-right: 15px;
+    margin-left: 10px;
+    
+}
+.row .col-2::after{
+    content: '';
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(#820000, #6F38C5);
+    border-radius: 6px;
+    position: absolute;
+    left: -8%;
+    visibility:hidden;
+}
+.row-0::before{
+    content: '';
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(#820000, #6F38C5);
+    border-radius: 6px;
+    position: absolute;
+    top: 590px;
+    text-align: center;
+    visibility:hidden;
+}
+.col-1{
+    position: relative;
+}
+.col-1 small{
+    color: grey;
+}
+.col-1 h2{
+    font-size: 50px;
+    color: #6F38C5;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.col-1 h3{
+    font-size: 20px;
+    color:#820000;
+    font-weight: bold;
+    margin: 0px 0 2px;
+    text-transform: uppercase;
+}
+.col-2a{
+    margin-right: 100px;
+}
+.col-2b{
+    margin-left: 90px;
+}
+.col-2a h2{
+    font-size: 50px;
+    color: #6F38C5;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.col-2b h2{
+    font-size: 50px;
+    color: #6F38C5;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: right;
+}
+.col-1 p{
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.col-1 h4{
+    margin: 0 0 2px 0px;
+    font-size: 15px;
+    color: rgb(49, 59, 59);
+}
+.col-1a{
+    display: flex !important;
+}
+.col-2b{
+    display: flex !important;
+}
+.col-1a .details{
+    margin-right: 50px;
+}
+.col-1a .details-1{
+    margin-right: 90px;
+    margin-left: 10px;
+}
+.col-1a .details h4{
+    margin: 0 0 2px 0px;
+    font-size: 15px;
+    color: rgb(49, 59, 59);
+}
+.col-1a .details small{
+    color: #6F38C5;
+}
+.col-1a .details-1 h4{
+    margin: 0 0 2px 0px;
+    font-size: 15px;
+    color: rgb(49, 59, 59);
+}
+.col-1a .details-1 small{
+    color: #6F38C5;
+}
+.container .row .col-1 .btn{
+    width: 200px;
+    height: 50px;
+    border: 0;
+    padding: 12px 10px;
+    outline:none;
+    color: #ffff;
+    background: linear-gradient(to right, #820000, #6F38C5);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.container .row .col-1 .btn img{
+    width: 30px;
+    display: none;
+    background: none;
+}
+.container .row .col-1 .btn:hover img{
+    display: block;
+}
+.container .row .col-1 .btn:hover{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/**for form button**/
+.container .row-1 .col-1-2 .btn{
+    width: 200px;
+    height: 200px;
+    border: 0;
+    padding: 12px 10px;
+    outline:none;
+    color: #ffff;
+    background: linear-gradient(to right, #820000, #6F38C5);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+.container .row-1 .col-1-2 .btn:hover{
+    background: linear-gradient(to right, #864d4d, #3d1b75);
+    transition: 0.5s;
+}
+/**End of form button**/
+.container .row-1 .col-1-2 #selected-images img{
+    width: 50px;
+    border-radius: 50%;
+}
+.col-2{
+    position: relative;
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+.col-2 .camera{
+    border-radius: 6px;
+
+}
+
+@media only screen and (max-width:700px){
+    navList ulist{
+        width: 100%;
+        background: linear-gradient(to right, #a6a6aa, #c1a0f5);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    navList ulist list{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    navList ulist list a{
+        color:#fff;
+    }
+    .navbar h3{
+        font-size: 12px;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .row{
+        flex-direction:column;
+        margin: 50px 0;
+        text-align: center;
+    }
+    .row-1{
+        flex-direction:column;
+        margin: 50px 0;
+        text-align: center;
+    }
+    .col-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-1{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-1-1{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-1-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+        align-items: center;
+        justify-content: center;
+    }
+    .col-1{
+        flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 20px;
+    }
+    .col-1 h3{
+        font-size: 12px;
+    }
+    .col-1 p{
+        font-size: 10px;
+    }
+}

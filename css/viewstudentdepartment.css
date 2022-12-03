@@ -1,0 +1,415 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: outfit;
+    background: #ebe5e5;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow:hidden;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.navbar h3{
+    font-size: 20px;
+    color:#820000;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-transform: capitalize;
+    text-align: left;
+    margin-bottom: 15px;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+    margin: 30px 0;
+}
+.menu-icon{
+    width: 25px;
+    cursor: pointer;
+    cursor: none;
+}
+navList{
+    flex: 1;
+    text-align: right;
+    background: none;
+}
+navList ulist list{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    background: none;
+}
+navList ulist list a{
+    text-decoration: none;
+    color: #6F38C5;
+    font-size: 14px;
+    background: none;
+}
+navList ullist list a:hover{
+    color:#820000;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.col-1{
+    position: relative;
+    margin-left: 50px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.col-1 .header{
+    display: flex;
+    margin-left: 100px;
+}
+.col-1 .headerDetails{
+    margin-top: 25px;
+    line-height: 80%;
+    margin-left: 80px;
+    margin-right: 45px;
+}
+.headerDetails::after{
+    width: 150px;
+    height: 500px;
+    background:#820000;
+    top: 30%;
+    position: absolute;
+    visibility:hidden;
+}
+.col-1 .headerDetails .school{
+    font-size: 20px;
+    color:#820000;
+    font-weight: bold;
+    margin: 10px 0 5px;
+    text-transform: capitalize;
+    text-align: left;
+}
+.col-1 .headerDetails .para{
+    color: black;
+}
+.col-1 .content .parag{
+    color: black;
+    font-weight: 500;
+}
+.col-1 .content{
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+.col-1 .header .headerImages img{
+    width: 88px;
+    height: 85px;
+}
+.col-1 .header .headerImages .iso{
+    width: 175px;
+    height: 75px;
+}
+.col-1 small{
+    color: grey;
+}
+.col-1 h2{
+    font-size: 40px;
+    color: #6F38C5;
+    text-transform: capitalize;
+}
+.col-1 h3{
+    font-size: 20px;
+    color:#820000;
+    font-weight: bold;
+    margin: 0px 0 10px;
+    text-transform: uppercase;
+}
+.col-1 p{
+    font-size: 16px;
+    color: grey;
+    font-weight: 100;
+}
+.col-1 h4{
+    margin: 0 0 10px 0px;
+    font-size: 15px;
+}
+.wrapper{
+    margin-left: 260px;
+}
+.wrapper form{
+    background: none;
+ }
+.wrapper .input-box{
+     position: relative;
+     height: 60px;
+     margin: 15px 0;
+ }
+.submit{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline:none;
+    color: #ffff;
+    background: linear-gradient(to right, #820000, #6F38C5);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.10s;
+}
+.submit:hover{
+    background: linear-gradient(to right, #6F38C5, #820000);
+}
+.input-box input{
+    height: 100%;
+    width: 500px;
+    background: #FFF;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    outline: none;
+    border-radius: 6px;
+    padding: 0 40px 0 16px;
+    border: 2px solid #6F38C5;
+    transition: all 0.3s ease;
+}
+.input-box input:focus{
+    border-color: #4070F4;
+}
+.input-box label,
+.input-box span{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color:#a6a6a6;
+}
+.input-box label{
+    left: 15px;
+    font-size: 18px;
+    font-weight: 400;
+    background: #FFF;
+    padding: 0 6px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label{
+    top: 20%;
+    color: #196f85;
+    font-size: 11px;
+    background: #FFFF;
+    border-radius: 5px;
+}
+.input-box span{
+    right: 15px;
+    cursor: pointer;
+    padding: 8px;
+    color: #6F38C5;
+    background: none;
+}
+.input-box .labelspecial{
+    top: 20%;
+    color: #196f85;
+    font-size: 11px;
+    background: #FFFF;
+    border-radius: 5px;
+}
+.alert{
+    display: flex;
+    align-items: center;
+    margin-top: -13px;
+    background: none;
+}
+.alert .errorIcon{
+    margin-right: 8px;
+    color: #D93025;
+    font-size: 18px;
+    display: none;
+}
+.alert .forgot{
+    text-decoration: none;
+    color: #6F38C5;
+    font-size: 18px;
+    font-weight: 500;
+    background: none;
+}
+.input-box.button #button{
+    background: linear-gradient(to right, #820000, #6F38C5);
+    border: none;
+    font-size: 15px;
+    color: #FFF;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.input-box.button #button.active:hover{
+    background:#6F38C5;
+    cursor: pointer;
+}
+button{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline:none;
+    color: #ffff;
+    background: linear-gradient(to right, #820000, #6F38C5);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+button img{
+    width: 30px;
+    display: none;
+    background: none;
+}
+button:hover img{
+    display: block;
+}
+button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.col-1::after{
+    content: '';
+    width: 10px;
+    height: 57%;
+    background: linear-gradient(#820000, #6F38C5);
+    border-radius: 6px;
+    position: absolute;
+    left: -40px;
+    top: 25px;
+    visibility: hidden;
+}
+.col-2{
+    position: relative;
+    flex-basis: 40%;
+    display: flex;
+    align-items: center;
+}
+.col-2::after{
+    content: '';
+    width: 10px;
+    height: 100%;
+    background: linear-gradient(#820000, #6F38C5);
+    border-radius: 6px;
+    position: absolute;
+    left: -20px;
+}
+.col-2 .details{
+    position: relative;
+    display: block;
+    align-items: left;
+}
+.col-2 img{
+    border-radius: 6px;
+    margin-right: 15px;
+    width: 300px;
+}
+.details p{
+    margin: 0 0 5px 0px;
+    font-size: 15px;
+}
+.details small{
+    color: grey;
+}
+
+/* table in main */
+.col-1 .list{
+    margin-left: 150px;
+}
+.col-1 .list .table-one{
+    width: 100px !;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background:	#ffffff;
+    color: black;
+    font-family: outfit;
+    border: none;
+    text-transform: capitalize;
+  }
+  .col-1 .list .table-one thead tr{
+    text-align: left;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    font-size: 12px;
+    color: #820000;
+    }
+
+.col-1 .qr{
+    display:flex;
+    margin-left: 50px;
+}
+.col-1 .qr img{
+    height: 100px;
+    width: 100px;
+    margin-right: 10px;
+}
+.col-1 .qr .details{
+    margin-top: 5px;
+    font-size: 12px;
+    line-height: 100%;
+    margin-right: 15px;
+}
+.col-1 .qr .details small{
+    color: #820000;
+}
+@media only screen and (max-width:700px){
+    navList ulist{
+        width: 100%;
+        background: linear-gradient(to right, #a6a6aa, #c1a0f5);
+        position: absolute;
+        top: 75px;
+        right: 0;
+        z-index: 2;
+    }
+    navList ulist list{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    navList ulist list a{
+        color:#fff;
+    }
+    .navbar h3{
+        font-size: 12px;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+    #menuList{
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    .row{
+        flex-direction: column-reverse;
+        margin: 50px 0;
+        text-align: center;
+    }
+    .col-2{
+        flex-basis: 100%;
+        margin-bottom: 50px;
+    }
+    .col-1{
+        flex-basis: 100%;
+    }
+    .col-1 h2{
+        font-size: 20px;
+    }
+    .col-1 h3{
+        font-size: 12px;
+    }
+    .col-1 p{
+        font-size: 10px;
+    }
+}
