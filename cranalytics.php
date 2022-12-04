@@ -93,7 +93,7 @@
                     <h2><?php echo $rowfemale['SUMFEMALE']?></h2>
 
                     <br>
-                    <h4>Total Number of Households CR type <b>Flash</b></h4>
+                    <h4>Total Number of Households CR type <b>Flush</b></h4>
                     <h2><?php echo $rowflash['SUMflash']?></h2>
 
                     <br>
