@@ -80,6 +80,18 @@
 
         <div class="row">
             <div class="col-1">
+                <h3>ANLYTICS</h3>
+                <p class="tilt">HOUSEHOLDS WITH<br>
+                    COMFORT RM.</p>
+                <p>in households</p>
+            </div>
+            <div class="col-2">
+                    <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-1">
                     <h4>Total Number of Households</h4>
                     <h2><?php echo $rowrescount['SUMRES']?></h2>
                     <h4>As of <b><?php echo $date ?></b></h4>
@@ -93,22 +105,13 @@
                     <h2><?php echo $rowfemale['SUMFEMALE']?></h2>
 
                     <br>
-                    <h4>Total Number of Households CR type <b>Flush</b></h4>
+                    <h4>Total Number of Households CR type <b>Flash</b></h4>
                     <h2><?php echo $rowflash['SUMflash']?></h2>
 
                     <br>
                     <h4>Total Number of Households <b>Wihout CR</b></h4>
                     <h2><?php echo $rownone['SUMnone']?></h2>
 
-            </div>
-            <div class="col-2">
-                    <canvas id="myChart"></canvas>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1">
-                
             </div>
             <div class="col-2">
                 <center>
@@ -140,7 +143,7 @@
                                     <td><?php echo $rowresident['householdno']; ?></td>
                                     <td><?php echo $rowresident['purokid']; ?></td>
                                     <td><?php echo $rowservices['cr']; ?></td>
-                                    <td><span class="material-symbols-outlined operation">edit</span>
+                                    <td> <a href="edithousehold.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">edit</span></a>
                                     <a href="viewhousehold.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
                                     <span class="material-symbols-outlined operation">delete</span>
                                     </td>

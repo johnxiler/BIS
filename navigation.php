@@ -87,7 +87,7 @@
             </div>
                 <ul class="sub-menu blank">
                     <li><a class="link_name" href="analytics.php">Analytics</a></li>
-                    <li><a href="totalpapulation.php">Total Population</a></li>
+                    <li><a href="totalpopulation.php">Total Population</a></li>
                     <li><a href="sesanalytics.php">Socio Economic Status</a></li>
                     <li><a href="electanalytics.php">With Electricity</a></li>
                     <li><a href="wateranalytics.php">With Water Facility</a></li>
@@ -127,14 +127,14 @@
 
             <li>
                 <div class="iocn-link">
-                <a href="#">
+                <a href="certificationbrgy.php">
                     <i class='bx bxs-file' ></i>
                     <span class="link_name">Certification</span>
                 </a>
                 <i class='bx bx-chevron-down arrow'></i>
                 </div>
                 <ul class="sub-menu blank">
-                    <li><a class="link_name" href="#">Certification</a></li>
+                    <li><a class="link_name" href="certificationbrgy.php">Certification</a></li>
                     <li><a class="link_name" href="#">Certificate of Indigency</a></li>
                     <li><a class="link_name" href="#">Brgy. Clearance</a></li>
                     <li><a class="link_name" href="#">Brgy. Certification</a></li>
@@ -152,7 +152,7 @@
             </li>
             <li>
                 <div class="iocn-link">
-                <a href="#">
+                <a href="about.php">
                     <i class='bx bx-info-circle'></i>
                     <span class="link_name">About</span>
                 </a>
@@ -161,7 +161,7 @@
                 <ul class="sub-menu">
                     <li><a class="link_name" href="about.php">About</a></li>
                     <li><a href="council.php">Brgy. Council</a></li>
-                    <li><a href=".mission.php">Mission</a></li>
+                    <li><a href="mission.php">Mission</a></li>
                     <li><a href="vision.php">Vision</a></li>
                 </ul> 
             </li>
@@ -170,7 +170,7 @@
             <div class="profile-content">
             </div>
             <div class="name-job">
-                <div class="profile_name"><?php echo $rownav['lastname']; ?>, <?php echo $rownav['firstname']; ?></div>
+                <div class="profile_name"><a style="text-decoration:none;color:white;" href="editaccountsec.php?id=<?php echo $rownav['id']; ?>"><?php echo $rownav['lastname']; ?>, <?php echo $rownav['firstname']; ?></a></div>
                 <div class="job"><?php echo $rownav['position']; ?></div>
             </div>
             <a href="logout.php"><i class='bx bx-log-out'></a></i>

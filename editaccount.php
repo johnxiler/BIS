@@ -1,9 +1,17 @@
+<?php
+    require('configOne.php');
+        $id=$_REQUEST['id'];
+        $query = "SELECT * from account where id='".$id."'";
+        $result = mysqli_query($conn, $query) or die ($mysqli_error());
+        $row = mysqli_fetch_assoc($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add system account user</title>
+    <title>Update system account user</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/adduser.css">
     <link rel="stylesheet" href="css/allmaster.css">
@@ -21,29 +29,23 @@
        $birthdate = $_POST["birthdate"];
        $gender = $_POST["gender"];
        $position = $_POST["position"];
-       $username = $_POST["username"];
-       $password = $_POST["password"];
 
         //query database
-        $resultCheck = $conn->query("SELECT * FROM account WHERE username='$username'");
-        $rowsCheck = mysqli_num_rows($resultCheck);
-            if ($rowsCheck < 1) {
-                $query = "INSERT INTO account VALUES('','$lastname', '$firstname', '$birthdate', '$gender', '$position', '$username', '$password')";
-                     mysqli_query($conn, $query);
-                    $message = "<p style='color:white;background-color:green;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>New Account Added successfully added!</p>";
-            }else{
-                $message = "<p style='color:black;background-color:orange;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>Record already Exist!</p>";
-            } 
-        
-            $mysqli = NEW MySQLi('localhost','root','','bis');     
-            $resultSet = $mysqli->query("SELECT * FROM account where username='$username'");
-            $row = mysqli_fetch_assoc($resultSet);
+     
+            $queryu = "UPDATE account SET lastname='".$lastname."', firstname='".$firstname."', birthdate='".$birthdate."', gender='".$gender."', position='".$position."' WHERE id='".$id."'";
+            mysqli_query($conn, $queryu);
+            $message = "<p style='color:white;background-color:green;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>Account Updated successfully added!</p>";
+            header('location:viewaccount.php?id='.$id);
 
-            $user = $row['username'];
-            $pos = $row['position'];
+            $mysqlil = NEW MySQLi('localhost','root','','bis');     
+            $resultSetl = $mysqlil->query("SELECT * FROM account where id='$id'");
+            $rowl = mysqli_fetch_assoc($resultSetl);
+
+            $user = $rowl['username'];
+            $pos = $rowl['position'];
             $date = date('d-m-y h:i:s'); 
 
-            $logs = "INSERT INTO logs VALUES('','$user', '$pos', 'Add New Account of username $username', '$date')";
+            $logs = "INSERT INTO logs VALUES('','$user', '$pos', '$user Update record of $lastname, $firstname', '$date')";
                 mysqli_query($conn, $logs);
             
     }
@@ -54,7 +56,7 @@
     <section class="home-section">
     <div class="container">
         <div class="navbar">
-            <img src="css/images/SystemLogo.png" class="logo"> <h3>| Add user account</h3>
+            <img src="css/images/SystemLogo.png" class="logo"> <h3>| Update user account</h3>
                 <navList>
                     <ulist id="menuList">
                         <list><a href=""> </a></list>
@@ -75,20 +77,21 @@
                 <form method="POST" action="" enctype="multipart/form-data">
                     <small>Account Information:</small>
                                     <div class="input-box">
-                                        <input name="lastname" type="text" required>
+                                        <input name="lastname" type="text" value="<?php echo $row['lastname']?>">
                                         <label>Last Name</label>
                                     </div>
 
                                     <div class="input-box">
-                                        <input class="username" name="firstname" type="text" required>
+                                        <input class="username" name="firstname" type="text" value="<?php echo $row['firstname']?>">
                                         <label>First Name</label>
                                     </div>
                                     <div class="input-box">
-                                        <input id="birthday" name="birthdate" type="date" required>
+                                        <input id="birthday" name="birthdate" type="date" value="<?php echo $row['birthdate']?>">
                                         <label class="labelspecial">Birthdate</label>
                                     </div>
                                     <div class="input-box">
                                         <select name="position">
+                                            <option value="<?php echo $row['position']?>"><?php echo $row['position']?></option>
                                             <option value="">Select Position:</option>
                                             <option value="Brgy.Captain">Brgy.Captain</option>
                                             <option value="Brgy. Kagawad">Brgy. Kagawad</option>
@@ -105,6 +108,7 @@
                     <small>Account Information:</small>
                                 <div class="input-box">
                                         <select name="gender">
+                                            <option value="<?php echo $row['gender']?>"><?php echo $row['gender']?></option>
                                             <option value="">Select Gender:</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -112,20 +116,11 @@
                                         <label class="labelspecial">Gender</label>
                                     </div>
 
-                                    <div class="input-box">
-                                        <input class="username" name="username" type="text" required>
-                                        <label>Create Username</label>
-                                    </div>
-
-                                    <div class="input-box">
-                                        <input class="username" name="password" type="Password" required>
-                                        <label>Create Password</label>
-                                    </div>
                                     <?php
                                             echo $message;
                                     ?> 
                                     <div class="input-box button">
-                                            <input id="button" type="submit" name="submit" value="Save">
+                                            <input id="button" type="submit" name="submit" value="Update">
                                     </div>
                 </div>
                     </form>

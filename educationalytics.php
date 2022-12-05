@@ -86,6 +86,18 @@
 
         <div class="row">
             <div class="col-1">
+                <h3>ANLYTICS</h3>
+                <p class="tilt">RESIDENTS WITH<br>
+                    THERE EDUCATIONAL ATTAINMENT</p>
+                <p>in households</p>
+            </div>
+            <div class="col-2">
+                    <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-1">
                     <h4>Total Number of Residents</h4>
                     <h2><?php echo $rowrescount['SUMRES']?></h2>
                     <h4>As of <b><?php echo $date ?></b></h4>
@@ -110,15 +122,6 @@
                     <h4>Total Number of Residents that are <b>College Graduate</b></h4>
                     <h2><?php echo $rowcollege['SUMcollege']?></h2>
 
-            </div>
-            <div class="col-2">
-                    <canvas id="myChart"></canvas>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1">
-                
             </div>
             <div class="col-2">
                 <center>

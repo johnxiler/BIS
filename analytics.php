@@ -64,7 +64,7 @@
                 <div class="content">
                     <div class="count">
                         <small>Total Number of Residents:</small>
-                        <h2><a href="totalpapulation.php"><?php echo $rowrescount['SUMRES']; ?></a></h2>
+                        <h2><a href="totalpopulation.php"><?php echo $rowrescount['SUMRES']; ?></a></h2>
                         <small>as of <?php echo $date; ?></small>
                     </div><br><br>
 
@@ -80,7 +80,7 @@
                 <div class="content">
                     <div class="count">
                         <small>Total Number of Purok:</small>
-                        <h2><a href="totalpapulation.php"><?php echo $rowpr['SUMpr']; ?></a></h2>
+                        <h2><a href="totalpopulation.php"><?php echo $rowpr['SUMpr']; ?></a></h2>
                         <small>as of <?php echo $date; ?></small>
                     </div><br><br>
 

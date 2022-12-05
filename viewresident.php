@@ -17,6 +17,12 @@
         $query = "SELECT * from residents where id='".$id."'";
         $result = mysqli_query($conn, $query) or die ($mysqli_error());
         $row = mysqli_fetch_assoc($result);
+
+        $health = $row['healthstat'];
+
+        $queryh = "SELECT * from healthstatus where id='".$health."'";
+        $resulth = mysqli_query($conn, $queryh) or die ($mysqli_error());
+        $rowh = mysqli_fetch_assoc($resulth);
 ?>
 
 <body>
@@ -27,7 +33,7 @@
             <img src="css/images/SystemLogo.png" class="logo"> <h3> | View Households</h3>
                 <navList>
                     <ulist id="menuList">
-                        <list><a href="editdhouseholds.php?id=<?php echo $row['id']; ?>">Update</a></list>
+                
                     </ulist>
                 </navList>
         </div>
@@ -36,7 +42,7 @@
             <div class="col-1">
                 <h3>Full Name:</h3>
                 <h2><?php echo $row['lname']; ?>, <?php echo $row['fname']; ?> <?php echo $row['mname']; ?></h2>
-                <button type="button"><a href="addresident.php?id=<?php echo $row['id']; ?>">Update</a><img src="css/images/arrow.png"></button>
+                <button type="button"><a href="editresident.php?id=<?php echo $row['id']; ?>">Update</a><img src="css/images/arrow.png"></button>
             </div>
         </div>
 
@@ -83,9 +89,9 @@
             </div>
             <div class="col-2">
                     <div class="details">
-                    <h4>Health Status:</h4><br>
+                    <h4>Health Information:</h4><br>
                     <small>Health Status:</small>
-                    <h4><?php echo $row['healthstat']; ?></h4><br>
+                    <h4><?php echo $rowh['healthstatus']; ?></h4><br>
                     <h4>Educational Attainment:</h4>
                     <small>Education:</small>
                     <h4><?php echo $row['education']; ?></h4>

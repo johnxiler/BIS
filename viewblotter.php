@@ -41,11 +41,15 @@
                 <h4><?php echo $row['date']; ?></h4>
                 <small>Complain to:</small>
                 <h4><?php echo $row['complainto']; ?></h4>
+                <small>Complain Title:</small>
+                <h4><?php echo $row['title']; ?></h4>
                 <small>Remarks:</small>
                 <h4><?php echo $row['remarks']; ?></h4>
+            </div>
 
-                <small>Statement:</small><br>
+            <div class="col-2">
                 <div class="statement">
+                    <small>Statement:</small><br>
                     <h4><?php echo $row['statement']; ?></h4>
                 </div>
             </div>

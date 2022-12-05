@@ -72,6 +72,17 @@
 
         <div class="row">
             <div class="col-1">
+                <h3>ANALYTICS</h3>
+                <p class="tilt">TOTAL POPULATION</p>
+                <p>by purok</p>
+            </div>
+            <div class="col-2">
+                    <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1">
                     <h4>Total Number of Population</h4>
                     <h2><?php echo $rowrescount['SUMRES']?></h2>
                     <h4>As of <b><?php echo $date ?></b></h4>
@@ -83,15 +94,6 @@
                     <br>
                     <h4>Total Number of Population <b>Female:</b></h4>
                     <h2><?php echo $rowfemale['SUMFEMALE']?></h2>
-            </div>
-            <div class="col-2">
-                    <canvas id="myChart"></canvas>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1">
-                
             </div>
             <div class="col-2">
                 <center>
@@ -122,7 +124,7 @@
                                     <td><?php echo $rowresident['mname']; ?></td>
                                     <td><?php echo $rowresident['ext']; ?></td>
                                     <td><?php echo $rowresident['gender']; ?></td>
-                                    <td><span class="material-symbols-outlined operation">edit</span>
+                                    <td><a href="editresident.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">edit</span></a>
                                     <a href="viewresident.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
                                     <span class="material-symbols-outlined operation">delete</span>
                                     </td>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>account user</title>
+    <title>Certification barangay</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/useraccount.css">
     <link rel="stylesheet" href="css/allmaster.css">
@@ -41,7 +41,7 @@
     <section class="home-section">
     <div class="container">
         <div class="navbar">
-            <img src="css/images/SystemLogo.png" class="logo"> <h3> | List of System User Account</h3>
+            <img src="css/images/SystemLogo.png" class="logo"> <h3> | Barangay Certification</h3>
                 <navList>
                     <ulist id="menuList">
                         <list></list>
@@ -53,12 +53,14 @@
 
         <div class="row">
             <div class="col-2">
+            <center>
                     <table width="100%" class="table" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Lastname</th>
                             <th>Firstname</th>
+                            <th>Middlename</th>
+                            <th>Ext</th>
                             <th>Gender</th>
                             <th>Operation</th>
                         </tr>
@@ -70,22 +72,21 @@
                         $mysqli = NEW MySQLi('localhost','root','','bis');
 
                         //query database
-                        $resultSet = $mysqli->query("SELECT * FROM account");
-                            while($row = mysqli_fetch_assoc($resultSet)) {
+                        $resultresident = $mysqli->query("SELECT * FROM residents");
+                            while($rowresident = mysqli_fetch_assoc($resultresident)) {
                     ?>
                                 <tr>
-                                    <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['lastname']; ?></td>
-                                    <td><?php echo $row['firstname']; ?></td>
-                                    <td><?php echo $row['position']; ?></td>
-                                    <td><a href="editaccount.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined operation">edit</a></span>
-                                    <a href="viewaccount.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
-                                    <span class="material-symbols-outlined operation">delete</span>
-                                    </td>
+                                    <td><?php echo $rowresident['lname']; ?></td>
+                                    <td><?php echo $rowresident['fname']; ?></td>
+                                    <td><?php echo $rowresident['mname']; ?></td>
+                                    <td><?php echo $rowresident['ext']; ?></td>
+                                    <td><?php echo $rowresident['gender']; ?></td>
+                                    <td><a href="certbrgyresident.php?id=<?php echo $rowresident['id']; ?>" target="_BLANK"><span class="material-symbols-outlined operation">visibility</span></a></td>
                                 </tr>
                             <?php } ?>
                     </tbody>
                 </table>
+                </center>
             
                 <script>
                 $(document).ready(function() {

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2022 at 08:00 AM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Dec 05, 2022 at 12:38 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -43,10 +43,11 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`id`, `lastname`, `firstname`, `birthdate`, `gender`, `position`, `username`, `password`) VALUES
-(1, 'aaas', 'aaas', '2022-11-01', 'Male', 'Brgy.Captain', 'admin', 'admin'),
+(1, 'Orisawa', 'Hesisosa', '2022-11-24', 'Female', 'Brgy. Secretary', 'admin', 'admin'),
 (2, 'sample', 'sample', '2022-12-07', 'Male', 'Brgy. Kagawad', 'admin123', 'admin123'),
 (3, 'Ceiling', 'Jackson', '2022-12-06', 'Male', 'Brgy. Secretary', '124524123', '124524123'),
-(4, 'ASASSAS', 'ASASSAS', '2022-12-21', 'Male', 'Brgy. Treasurer', '124524', 'ASASSAS');
+(4, 'Jusmio', 'Patawara Kita', '2022-12-01', 'Male', 'Brgy. Treasurer', '124524', 'ASASSAS'),
+(5, 'Santisima', 'Trinidad', '1993-02-01', 'Female', 'Brgy. Secretary', 'adminsecc', 'adminsecc');
 
 -- --------------------------------------------------------
 
@@ -59,6 +60,7 @@ CREATE TABLE `blotter` (
   `complainant` varchar(50) NOT NULL,
   `complainto` varchar(50) NOT NULL,
   `statement` varchar(9000) NOT NULL,
+  `title` varchar(100) NOT NULL,
   `remarks` varchar(50) NOT NULL,
   `date` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -67,11 +69,12 @@ CREATE TABLE `blotter` (
 -- Dumping data for table `blotter`
 --
 
-INSERT INTO `blotter` (`id`, `complainant`, `complainto`, `statement`, `remarks`, `date`) VALUES
-(5, 'Relex, Serwin Oho', 'Jordan, Ericka', 'Sample StatementSample StatementSample StatementSample StatementSample StatementSample Statement', 'Noted, Not resolved', '02-12-22 08:19:24'),
-(6, 'Juan, Santos', 'Asupardo, Salis', 'Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Bla\nh,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah', 'Note Resolved', '03-12-22 02:44:05'),
-(7, 'Aa', 'Aa', '                     Aa                       ', 'aAa', '03-12-22 06:44:30'),
-(8, 'Aa', 'aA', '                        aA                    ', 'aA', '03-12-22 06:44:49');
+INSERT INTO `blotter` (`id`, `complainant`, `complainto`, `statement`, `title`, `remarks`, `date`) VALUES
+(5, 'Relex, Serwin Oho', 'Jordan, Ericka', 'Sample StatementSample StatementSample StatementSample StatementSample StatementSample Statement', '', 'Noted, Not resolved', '02-12-22 08:19:24'),
+(6, 'Juan, Santos', 'Asupardo, Salis', 'Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Bla\nh,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah,Blah', '', 'Note Resolved', '03-12-22 02:44:05'),
+(7, 'Aa', 'Aa', '                     Aa                       ', '', 'aAa', '03-12-22 06:44:30'),
+(8, 'Aa', 'aA', '                        aA                    ', '', 'aA', '03-12-22 06:44:49'),
+(9, 'ssd', 'sdsds', '                                     dsds       ', 'sdsd', 'sdsds', '04-12-22 03:18:53');
 
 -- --------------------------------------------------------
 
@@ -220,7 +223,7 @@ CREATE TABLE `households` (
 --
 
 INSERT INTO `households` (`id`, `householdno`, `purokid`, `electricityid`, `waterid`, `crid`, `ses`) VALUES
-(1, '12543', 1, 2, 1, 1, 'Middle Class'),
+(1, 'I-90232', 2, 3, 3, 4, 'Middle Class'),
 (2, '121212', 1, 2, 1, 1, 'Middle Class'),
 (3, '1', 2, 2, 1, 1, 'Upper Class'),
 (4, '2', 2, 2, 1, 3, 'Lower Class'),
@@ -230,7 +233,8 @@ INSERT INTO `households` (`id`, `householdno`, `purokid`, `electricityid`, `wate
 (8, '122121', 1, 2, 1, 4, 'Upper Class'),
 (9, '1212', 2, 2, 1, 1, 'Upper Class'),
 (10, '2121', 3, 3, 1, 2, 'Upper Class'),
-(11, '4343434', 2, 3, 1, 2, 'Upper Class');
+(11, '4343434', 2, 3, 1, 2, 'Upper Class'),
+(12, 'I-281213', 3, 2, 1, 1, 'Upper Class');
 
 -- --------------------------------------------------------
 
@@ -261,7 +265,39 @@ INSERT INTO `logs` (`id`, `username`, `position`, `act`, `date`) VALUES
 (12, 'admin', 'Brgy.Captain', 'Add New Residents with Lastname asasasa', '03-12-22 06:49:43'),
 (13, 'admin', 'Brgy.Captain', 'Log In on 03-12-22 07:02:30', '03-12-22 07:02:30'),
 (14, 'admin', 'Brgy.Captain', 'Log In on 03-12-22 07:38:00', '03-12-22 07:38:00'),
-(15, 'admin', 'Brgy.Captain', 'Log In on 03-12-22 07:38:15', '03-12-22 07:38:15');
+(15, 'admin', 'Brgy.Captain', 'Log In on 03-12-22 07:38:15', '03-12-22 07:38:15'),
+(16, 'admin', 'Brgy.Captain', 'Log In on 04-12-22 02:07:04', '04-12-22 02:07:04'),
+(17, 'admin', 'Brgy.Captain', 'Add Blotter Case for ssd', '04-12-22 03:19:13'),
+(18, 'admin', 'Brgy.Captain', 'Add New Household No I-281213', '04-12-22 03:36:06'),
+(19, 'admin', 'Brgy.Captain', 'Add New Residents with Lastname Satons', '04-12-22 03:40:54'),
+(20, 'admin', 'Brgy.Captain', 'Add New Account of username admin', '04-12-22 05:20:36'),
+(21, 'adminsec', 'Brgy. Secretary', 'Add New Account of username adminsec', '04-12-22 05:21:18'),
+(22, 'adminsec', 'Brgy. Secretary', 'Log In on 04-12-22 05:21:43', '04-12-22 05:21:43'),
+(23, '', '', 'Add New Account of username ', '04-12-22 05:42:20'),
+(24, '', '', 'Add New Account of username ', '04-12-22 05:43:56'),
+(25, '', '', ' Update record of Hesosa, Orisawa', '04-12-22 05:46:55'),
+(26, 'admin', 'Brgy.Captain', 'admin Update record of aaasasa, aaasasas', '04-12-22 05:47:47'),
+(27, 'admin', 'Brgy.Captain', 'admin Update record of aaasasa, aaasasas', '04-12-22 05:47:56'),
+(28, 'admin', 'Brgy.Captain', 'admin Update record of aaassfsssd, aaassdsdsd', '04-12-22 05:48:07'),
+(29, 'admin', 'Brgy.Captain', 'admin Update record of aaasddsd, aaassdsdsd', '04-12-22 05:50:42'),
+(30, 'admin', 'Brgy.Captain', 'admin Update record of aaasZZ, aaasZZ', '04-12-22 05:54:08'),
+(31, 'admin', 'Brgy.Captain', 'admin Update record of aaassdssds, aaasdsdsds', '04-12-22 05:57:49'),
+(32, 'admin', 'Brgy.Captain', 'admin Update record of aaaszxzxz, aaasxzxzx', '04-12-22 06:00:37'),
+(33, 'admin', 'Brgy.Captain', 'admin Update record of aaasxzxzxz, aaaszxzxz', '04-12-22 06:04:04'),
+(34, 'admin', 'Brgy.Captain', 'admin Update record of aaasasasa, aaassasa', '04-12-22 06:06:09'),
+(35, 'adminsec', 'Brgy. Secretary', 'Log In on 04-12-22 06:07:01', '04-12-22 06:07:01'),
+(36, 'admin', 'Brgy.Captain', 'admin Update record of aaasxzxzxzx, aaaszxzxz', '04-12-22 06:07:21'),
+(37, 'admin', 'Brgy. Secretary', 'admin Update record of aaassff, aaassfsfsf', '04-12-22 06:09:42'),
+(38, 'admin', 'Brgy. Secretary', 'admin Update record of Orisawa, Hesisosa', '04-12-22 06:10:10'),
+(39, '124524', 'Brgy. Treasurer', '124524 Update record of Jusmio, Patawara Kita', '04-12-22 06:11:30'),
+(40, '124524', 'Brgy. Treasurer', '124524 Update record of Jusmio, Patawara Kita', '04-12-22 06:11:35'),
+(41, 'adminsecc', 'Brgy. Secretary', 'adminsecc change personal password or username.', '04-12-22 06:47:21'),
+(42, 'adminsecc', 'Brgy. Secretary', 'Log In on 04-12-22 06:47:29', '04-12-22 06:47:29'),
+(43, 'adminsecc', 'Brgy. Secretary', 'Household No I-90232 Update the record.', '04-12-22 07:14:54'),
+(44, 'adminsecc', 'Brgy. Secretary', 'Add New Residents with Lastname 4444', '04-12-22 08:16:08'),
+(45, 'adminsecc', 'Brgy. Secretary', 'Add New Residents with Lastname Orisawa', '04-12-22 08:19:26'),
+(46, 'adminsecc', 'Brgy. Secretary', 'Add New Residents with Lastname Orisawa', '04-12-22 08:19:42'),
+(47, 'adminsecc', 'Brgy. Secretary', 'Add New Residents with Lastname Orisawa', '04-12-22 08:19:56');
 
 -- --------------------------------------------------------
 
@@ -331,7 +367,9 @@ INSERT INTO `residents` (`id`, `householdid`, `purok`, `lname`, `fname`, `mname`
 (14, 5, 0, 'Pena', 'Alvin', 'Dela Torre', '', '1972-08-20', 'Male', 'Employed', 'Driver', '', '20000', '1', 'Married', '0', '0', '0', '0', '099121331', 'College Graduate', 'Father', '0'),
 (15, 5, 0, 'Pena', 'Maricel', 'Camacho', '', '2002-06-19', 'Female', 'Employed', 'Teacher', '', '', '1', 'Married', '0', '0', '0', '0', '091231731', 'College Graduate', '', '0'),
 (16, 6, 0, 'Lim', 'Melanie', 'Lagumen', '', '1993-12-23', 'Female', 'Self-employed', 'Lawyer', 'V Line Cosmetic Bus.', '200,000', '1', 'Single', '0', '0', '0', '0', '029392742', 'College Graduate', 'Mother', '0'),
-(18, 6, 7, 'asasasa', 'sasas', 'asa', 'sasa', '2022-12-20', 'Male', 'Employed', 'asasa', 'asas', '7465', '1', 'Married', '0', '0', '0', '0', '424', 'Elementary Graduate', 'Father', '0');
+(18, 6, 7, 'asasasa', 'sasas', 'asa', 'sasa', '2022-12-20', 'Male', 'Employed', 'asasa', 'asas', '7465', '1', 'Married', '0', '0', '0', '0', '424', 'Elementary Graduate', 'Father', '0'),
+(19, 1, 1, 'Satons', 'Juan', 'Samchez', 'jr.', '1995-02-01', 'Male', 'Employed', 'Cler', 'None', '5000', '3', 'Single', '82323233323', '82323233323', '82323233323', '82323233323', '0961361311', 'College Graduate', 'Son', '1'),
+(20, 20, 0, 'Orisawa', 'Sawana', 'Mariaiyusip', 'Sr.', '1965-02-24', 'Female', 'Employed', 'Samurai Expert', 'Samurai Maker', '200000', '2', 'Widowed', '2121212331', '2121212331', '2121212331', '2121212331', '09324431113', 'Undergrad', 'Mother', '0');
 
 -- --------------------------------------------------------
 
@@ -444,13 +482,13 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `blotter`
 --
 ALTER TABLE `blotter`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -492,13 +530,13 @@ ALTER TABLE `healthstatus`
 -- AUTO_INCREMENT for table `households`
 --
 ALTER TABLE `households`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `purok`
@@ -510,7 +548,7 @@ ALTER TABLE `purok`
 -- AUTO_INCREMENT for table `residents`
 --
 ALTER TABLE `residents`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `services`

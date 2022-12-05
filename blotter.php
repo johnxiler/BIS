@@ -56,7 +56,7 @@
                     <table width="100%" class="table" id="dataTables-example">
                     <thead>
                         <tr>
-                            
+                            <!-- <th>ID</th> -->
                             <th>Complainant</th>
                             <th>Remarks</th>
                             <th>date</th>
@@ -74,7 +74,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                    
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['complainant']; ?></td>
                                     <td><?php echo $row['remarks']; ?></td>
                                     <td><?php echo $row['date']; ?></td>

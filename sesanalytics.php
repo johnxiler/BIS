@@ -75,6 +75,18 @@
 
         <div class="row">
             <div class="col-1">
+                <h3>ANALYTICS</h3>
+                <p class="tilt">SOCIO<br>
+                    ECONOMIC STATUS</p>
+                <p>in households</p>
+            </div>
+            <div class="col-2">
+                    <canvas id="myChart"></canvas>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="col-1">
                     <h4>Total Number of Households</h4>
                     <h2><?php echo $rowrescount['SUMRES']?></h2>
                     <h4>As of <b><?php echo $date ?></b></h4>
@@ -92,16 +104,7 @@
                     <h2><?php echo $rowlower['SUMlower']?></h2>
             </div>
             <div class="col-2">
-                    <canvas id="myChart"></canvas>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-1">
-                
-            </div>
-            <div class="col-2">
-                <center>
+        
                     <table width="100%" class="table" id="dataTables-example">
                     <thead>
                         <tr>
@@ -125,7 +128,7 @@
                                     <td><?php echo $rowresident['householdno']; ?></td>
                                     <td><?php echo $rowresident['purokid']; ?></td>
                                     <td><?php echo $rowresident['ses']; ?></td>
-                                    <td><span class="material-symbols-outlined operation">edit</span>
+                                    <td><a href="edithousehold.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">edit</span></a>
                                     <a href="viewhousehold.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
                                     <span class="material-symbols-outlined operation">delete</span>
                                     </td>
@@ -133,7 +136,6 @@
                             <?php } ?>
                     </tbody>
                 </table>
-                </center>
             
                 <!--for bootsrap tableOne-->
                         <script src="bootstrap/js/jquery.min.js"></script>

@@ -65,8 +65,12 @@ navList ullist list a:hover{
 .col-1{
     flex-basis:30%;
     position: relative;
-    margin-left: 50px;
+    margin-left: 150px;
     margin-right: 50px;
+}
+.col-1 .tilt{
+    font-size: 20px;
+    color: grey;
 }
 .col-1 h2{
     font-size: 45px;

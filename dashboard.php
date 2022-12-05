@@ -40,10 +40,10 @@
             <img src="css/images/SystemLogo.png" class="logo">
                 <navList>
                     <ulist id="menuList">
-                        <list><a href="">Brgy.Council</a></list>
-                        <list><a href="">Mission</a></list>
-                        <list><a href="">Vision</a></list>
-                        <list><a href="">About</a></list>
+                        <list><a href="council.php">Brgy.Council</a></list>
+                        <list><a href="mission.php">Mission</a></list>
+                        <list><a href="vision.php">Vision</a></list>
+                        <list><a href="about.php">About</a></list>
                     </ulist>
                 </navList>
         </div>

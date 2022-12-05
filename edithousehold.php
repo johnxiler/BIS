@@ -1,9 +1,16 @@
+<?php
+    require('configOne.php');
+        $id=$_REQUEST['id'];
+        $query = "SELECT * from households where id='".$id."'";
+        $result = mysqli_query($conn, $query) or die ($mysqli_error());
+        $row = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Household</title>
+    <title>Update Household</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="css/adduser.css">
     <link rel="stylesheet" href="css/allmaster.css">
@@ -29,9 +36,10 @@
         $resultCheck = $conn->query("SELECT * FROM households WHERE householdno='$householdno'");
         $rowsCheck = mysqli_num_rows($resultCheck);
             if ($rowsCheck < 1) {
-                $query = "INSERT INTO households VALUES('','$householdno', '$purokid', '$electid', '$waterid', '$crid', '$ses')";
+                $query = "UPDATE households SET householdno='".$householdno."', purokid='".$purokid."', electricityid='".$electid."', waterid='".$waterid."', crid='".$crid."', ses='".$ses."' WHERE id='".$id."'";
                      mysqli_query($conn, $query);
-                    $message = "<p style='color:white;background-color:green;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>New Household Added successfully added!</p>";
+                    $message = "<p style='color:white;background-color:green;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>Household successfully Updated!</p>";
+                    header('location:viewhousehold.php?id='.$id);
             }else{
                 $message = "<p style='color:black;background-color:orange;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>Record already Exist!</p>";
             } 
@@ -45,22 +53,22 @@
     include 'navigation.php';
     if(isset($_POST["submit"])){
 
-            $mysqli = NEW MySQLi('localhost','root','','bis');     
-            $resultSet = $mysqli->query("SELECT * FROM account where username='$username'");
-            $row = mysqli_fetch_assoc($resultSet);
+            $mysqlil = NEW MySQLi('localhost','root','','bis');     
+            $resultSetl = $mysqlil->query("SELECT * FROM account where username='$username'");
+            $rowl = mysqli_fetch_assoc($resultSetl);
 
-            $user = $row['username'];
-            $pos = $row['position'];
+            $user = $rowl['username'];
+            $pos = $rowl['position'];
             $date = date('d-m-y h:i:s'); 
 
-            $logs = "INSERT INTO logs VALUES('','$user', '$pos', 'Add New Household No $householdno', '$date')";
+            $logs = "INSERT INTO logs VALUES('','$user', '$pos', 'Update the record of Household No $householdno.', '$date')";
                 mysqli_query($conn, $logs);
     }
     ?>
     <section class="home-section">
     <div class="container">
         <div class="navbar">
-            <img src="css/images/SystemLogo.png" class="logo"> <h3>| Add Households</h3>
+            <img src="css/images/SystemLogo.png" class="logo"> <h3>| Update Households</h3>
                 <navList>
                     <ulist id="menuList">
                         <list><a href=""> </a></list>
@@ -81,12 +89,13 @@
                 <form method="POST" action="" enctype="multipart/form-data">
                     <small>Household Information:</small>
                                     <div class="input-box">
-                                        <input name="householdno" type="text" required>
+                                        <input name="householdno" type="text" value="<?php echo $row['householdno']; ?>">
                                         <label>Household Number</label>
                                     </div>
 
                                     <div class="input-box">
                                         <select name="purokid">
+                                        <option value="<?php echo $row['id']; ?>"><?php echo $row['purokid']; ?></option>
                                         <option value="">Select Purok No:</option>
                                         <?php
                                             //connect to the database
@@ -105,6 +114,7 @@
                     <small>Socio Economic Status:</small>
                                     <div class="input-box">
                                         <select name="ses">
+                                            <option value="<?php echo $row['ses']; ?>"><?php echo $row['ses']; ?></option>
                                             <option value="">Select Socio Economic Status:</option>
                                             <option value="Upper Class">Upper Class</option>
                                             <option value="Middle Class">Middle Class</option>

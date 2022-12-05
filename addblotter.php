@@ -21,11 +21,12 @@
        $complainant = $_POST["complainant"];
        $complainto = $_POST["complainto"];
        $complain = $_POST["complain"];
+       $title = $_POST["title"];
        $remarks = $_POST["remarks"];
        $date = $_POST["date"];
 
         //query database
-        $query = "INSERT INTO blotter VALUES('','$complainant', '$complainto', '$complain', '$remarks','$date')";
+        $query = "INSERT INTO blotter VALUES('','$complainant', '$complainto', '$complain', '$title', '$remarks','$date')";
         mysqli_query($conn, $query);
         $message = "<p style='color:white;background-color:green;border-radius:5px;padding:15px;text-align:center;font-style:bold;'>Record Save!</p>";
     }
@@ -92,7 +93,10 @@
             <div class="col-2">
                 <div class="wrapper">
                     <small>Complain Information:</small>
-
+                                    <div class="input-box">
+                                        <input class="username" name="title" type="text">
+                                        <label>Complain Title:</label>
+                                    </div>
                                     <div class="input-box">
                                         <input class="username" name="remarks" type="text">
                                         <label>Remarks</label>

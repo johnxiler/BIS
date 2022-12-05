@@ -75,7 +75,7 @@
             <img src="css/images/SystemLogo.png" class="logo"> <h3> | View Households</h3>
                 <navList>
                     <ulist id="menuList">
-                        <list><a href="editdhouseholds.php?id=<?php echo $row['id']; ?>">Update</a></list>
+                        <list><a href="edithousehold.php?id=<?php echo $row['id']; ?>">Update</a></list>
                     </ulist>
                 </navList>
         </div>
@@ -133,7 +133,7 @@
                                     <td><?php echo $rowresident['gender']; ?></td>
                                     <td><?php echo $rowresident['role']; ?></td>
                                     <td><?php echo $rowresident['position']; ?></td>
-                                    <td><span class="material-symbols-outlined operation">edit</span>
+                                    <td> <a href="editresident.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">edit</span></a>
                                     <a href="viewresident.php?id=<?php echo $rowresident['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
                                     <span class="material-symbols-outlined operation">delete</span>
                                     </td>

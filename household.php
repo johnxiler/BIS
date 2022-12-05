@@ -76,7 +76,7 @@
                                     <td><?php echo $row['householdno']; ?></td>
                                     <td><?php echo $row['purokid']; ?></td>
                                     <td><?php echo $row['ses']; ?></td>
-                                    <td><span class="material-symbols-outlined operation">edit</span>
+                                    <td><a href="edithousehold.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined operation">edit</span></a>
                                     <a href="viewhousehold.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined operation">visibility</span></a>
                                     <span class="material-symbols-outlined operation">delete</span>
                                     </td>

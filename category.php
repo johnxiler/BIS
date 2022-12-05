@@ -55,7 +55,7 @@
                     <table width="100%" class="table" id="dataTables-purok">
                     <thead>
                         <tr>
-                            
+                            <!-- <th>ID</th> -->
                             <th>Purok No.</th>
                             <th>Operation</th>
                         </tr>
@@ -71,7 +71,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                    
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['purokno']; ?></td>
                                     <td><span class="material-symbols-outlined operation">edit</span>
                                     <a href="#"><span class="material-symbols-outlined operation">visibility</span></a>
@@ -95,7 +95,7 @@
                     <table width="100%" class="table" id="dataTables-govmem">
                     <thead>
                         <tr>
-                            
+                            <!-- <th>ID</th> -->
                             <th>Government Membership.</th>
                             <th>Operation</th>
                         </tr>
@@ -111,7 +111,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                   
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['governmentmem']; ?></td>
                                     <td><span class="material-symbols-outlined operation">edit</span>
                                     <a href="#"><span class="material-symbols-outlined operation">visibility</span></a>
@@ -135,7 +135,7 @@
                     <table width="100%" class="table" id="dataTables-services">
                     <thead>
                         <tr>
-                           
+                            <!-- <th>ID</th> -->
                             <th>Type</th>
                             <th>Services</th>
                             <th>Operation</th>
@@ -152,7 +152,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                   
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['type']; ?></td>
                                     <td><?php echo $row['facility']; ?></td>
                                     <td><span class="material-symbols-outlined operation">edit</span>
@@ -177,7 +177,7 @@
                     <table width="100%" class="table" id="dataTables-cr">
                     <thead>
                         <tr>
-                            
+                            <!-- <th>ID</th> -->
                             <th>Comfort Rm. Type</th>
                             <th>Operation</th>
                         </tr>
@@ -193,7 +193,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                    
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['cr']; ?></td>
                                     <td><span class="material-symbols-outlined operation">edit</span>
                                     <a href="#"><span class="material-symbols-outlined operation">visibility</span></a>
@@ -217,7 +217,7 @@
                     <table width="100%" class="table" id="dataTables-health">
                     <thead>
                         <tr>
-                            
+                            <!-- <th>ID</th> -->
                             <th>Health Status.</th>
                             <th>Operation</th>
                         </tr>
@@ -233,7 +233,7 @@
                             while($row = mysqli_fetch_assoc($resultSet)) {
                     ?>
                                 <tr>
-                                    
+                                    <!-- <td><?php //echo $row['id']; ?></td> -->
                                     <td><?php echo $row['healthstatus']; ?></td>
                                     <td><span class="material-symbols-outlined operation">edit</span>
                                     <a href="#"><span class="material-symbols-outlined operation">visibility</span></a>
